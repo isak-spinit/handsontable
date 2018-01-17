@@ -4,7 +4,7 @@
   "homepage": "https://handsontable.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/handsontable/handsontable.git"
+    "url": "https://github.com/isak-spinit/handsontable.git"
   },
   "bugs": {
     "url": "https://github.com/handsontable/handsontable/issues"
@@ -58,7 +58,7 @@
   ],
   "dependencies": {
     "moment": "2.18.1",
-    "numbro": "1.11.0",
+    "numbro": "2.0.2",
     "pikaday": "1.5.1"
   },
   "devDependencies": {
