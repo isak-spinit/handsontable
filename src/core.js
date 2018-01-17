@@ -1,4 +1,4 @@
-import * as numbro from 'numbro';
+import numbro from 'numbro';
 import * as swedish from 'numbro/dist/languages/sv-SE.min.js';
 import {addClass, empty, isChildOfWebComponentTable, removeClass} from './helpers/dom/element';
 import {columnFactory} from './helpers/setting';

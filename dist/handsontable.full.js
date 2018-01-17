@@ -24,7 +24,7 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  * Version: 0.35.0
- * Release date: 06/12/2017 (built at 17/01/2018 12:18:06)
+ * Release date: 06/12/2017 (built at 17/01/2018 13:41:57)
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -15229,7 +15229,7 @@ exports.default = Core;
 
 var _numbro = __webpack_require__(67);
 
-var numbro = _interopRequireWildcard(_numbro);
+var _numbro2 = _interopRequireDefault(_numbro);
 
 var _svSEMin = __webpack_require__(434);
 
@@ -15303,9 +15303,9 @@ var _dictionariesManager = __webpack_require__(68);
 
 var _utils = __webpack_require__(308);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -16268,8 +16268,8 @@ function Core(rootElement, userSettings) {
 
   this.init = function () {
     // Fix for swedish
-    if (numbro && numbro.cultures() && !numbro.cultures()['sv-SE']) {
-      numbro.culture('sv-SE', swedish);
+    if (_numbro2.default && _numbro2.default.cultures() && !_numbro2.default.cultures()['sv-SE']) {
+      _numbro2.default.culture('sv-SE', swedish);
     }
 
     dataSource.setData(priv.settings.data);
@@ -16342,20 +16342,20 @@ function Core(rootElement, userSettings) {
             var len = changes[i][3].length;
 
             if ((0, _mixed.isUndefined)(cellCulture)) {
-              numbro.culture('en-US');
+              _numbro2.default.culture('en-US');
             } else if (changes[i][3].indexOf('.') === len - 3 && changes[i][3].indexOf(',') === -1) {
               // this input in format XXXX.XX is likely to come from paste. Let's parse it using international rules
-              numbro.culture('en-US');
+              _numbro2.default.culture('en-US');
             } else {
 
-              numbro.culture(cellCulture);
+              _numbro2.default.culture(cellCulture);
             }
 
             // try to parse to float - https://github.com/foretagsplatsen/numbro/pull/183
-            if (numbro.validate(changes[i][3]) && !isNaN(changes[i][3])) {
+            if (_numbro2.default.validate(changes[i][3]) && !isNaN(changes[i][3])) {
               changes[i][3] = parseFloat(changes[i][3]);
             } else {
-              changes[i][3] = numbro().unformat(changes[i][3]) || changes[i][3];
+              changes[i][3] = (0, _numbro2.default)().unformat(changes[i][3]) || changes[i][3];
             }
           }
         }
@@ -43537,7 +43537,7 @@ Handsontable.DefaultSettings = _defaultSettings2.default;
 Handsontable.EventManager = _eventManager2.default;
 Handsontable._getListenersCounter = _eventManager.getListenersCounter; // For MemoryLeak tests
 
-Handsontable.buildDate = '17/01/2018 12:18:06';
+Handsontable.buildDate = '17/01/2018 13:41:57';
 Handsontable.packageName = 'handsontable';
 Handsontable.version = '0.35.0';
 
