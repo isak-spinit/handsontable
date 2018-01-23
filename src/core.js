@@ -1,4 +1,5 @@
 import numbro from 'numbro';
+import * as swedish from 'numbro/dist/languages/sv-SE.min.js';
 import {addClass, empty, isChildOfWebComponentTable, removeClass} from './helpers/dom/element';
 import {columnFactory} from './helpers/setting';
 import {isFunction} from './helpers/function';
@@ -949,6 +950,11 @@ export default function Core(rootElement, userSettings, rootInstanceSymbol = fal
   };
 
   this.init = function() {
+    // Fix for swedish
+    if (numbro && numbro.cultures() && !numbro.cultures()['sv-SE']) {
+      numbro.culture('sv-SE', swedish);
+    }
+
     dataSource.setData(priv.settings.data);
     instance.runHooks('beforeInit');
 
